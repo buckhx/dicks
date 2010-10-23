@@ -44,12 +44,11 @@
         %p
           View the
           %em slightly more complex than should really be necessary
-          source on
           = succeed "." do
-            %a{:href => "http://github.com/martinemde/dicks", :title => "Dicks on github"} github
+            %a{:href => "http://github.com/martinemde/dicks", :title => "Dicks on github"} source on github
         %p
           Follow
           %a{:href => "http://twitter.com/dicksapi", :title => "Dicks on Twitter"} @dicksapi
-          or the dicks presenter:&nbsp;
-          %a{:href => "http://twitter.com/martinemde", :title => "Did I really seriously call myself the dicks presenter?"}> @martinemde
-          \.
+          or the dicks presenter:
+          = succeed "." do
+            %a{:href => "http://twitter.com/martinemde", :title => "Did I really seriously call myself the dicks presenter?"} @martinemde
