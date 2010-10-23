@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'haml'
 require 'sinatra'
 require 'json'
@@ -8,7 +9,7 @@ set :root, File.dirname(__FILE__)
 
 helpers do
   def dicks(count)
-    `dicks #{count.to_i} 2>&1`
+    `bundle exec dicks #{count.to_i} 2>&1`
   end
 end
 
