@@ -7,6 +7,10 @@
         margin: 1em auto;
         width: 10em;
         font-size: x-large; }
+      #default {
+        margin-top: 20em;
+        font-size: small;
+        color: #888; }
     </style>
   </head>
   <body>
@@ -15,5 +19,13 @@
 <%= @dicks %>
       </pre>
     </div>
+    <% if @default %>
+      <p id="default">
+        Want more (or less) dicks?
+        <br />
+        Try putting a number in the url like this:
+        <a href="/10">10 dicks</a>
+      </p>
+    <% end %>
   </body>
 </html>

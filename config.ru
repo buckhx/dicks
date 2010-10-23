@@ -1,6 +1,7 @@
 require 'haml'
 require 'sinatra'
 require 'json'
+require 'yaml'
 
 set :root, File.dirname(__FILE__)
 
@@ -13,6 +14,7 @@ end
 
 get '/' do
   @dicks = dicks(5)
+  @default = true
   erb :index
 end
 
@@ -22,17 +24,22 @@ get %r#/([\d]{1,4})$# do |count|
 end
 
 get %r#/([\d]{1,4}).txt# do |count|
-  content_type 'text/plain', :charset => 'utf-8'
+  content_type :text
   dicks(count)
 end
 
 get %r#/([\d]{1,4}).json# do |count|
-  content_type 'application/json', :charset => 'utf-8'
+  content_type :json
   {:dicks => dicks(count).split("\n")}.to_json
 end
 
+get %r#/([\d]{1,4}).ya?ml# do |count|
+  content_type :yaml
+  {:dicks => dicks(count).split("\n")}.to_yaml
+end
+
 get %r#/([\d]{1,4}).xml# do |count|
-  content_type 'application/xml', :charset => 'utf-8'
+  content_type :xml
   @dicks = dicks(count).split("\n")
   haml :xml
 end
