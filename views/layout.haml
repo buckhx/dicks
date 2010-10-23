@@ -1,0 +1,10 @@
+!!! 5
+%html{:lang => "en-US", "xml:lang" => "en-US", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title The right amount of ASCII Dicks
+    %link(rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico")
+    %link(href="/dicks.css" rel="stylesheet" media="screen" type="text/css")
+    = haml(:analytics, :layout => false)
+  %body
+    = yield

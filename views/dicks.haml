@@ -1,54 +1,38 @@
-!!! 5
-%html{:lang => "en-US", "xml:lang" => "en-US", :xmlns => "http://www.w3.org/1999/xhtml"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title The right amount of ASCII Dicks
-    %link{ :href => "/dicks.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
-  %body
-    #dicks
-      - @dicks.each do |dick|
-        .dick= dick
-    - if @default
-      #info
-        %p
-          More (or less) dicks?
-          Add a number to the url:&nbsp;
-          %a(href="/10" title="10 of 'em")> 10 dicks
-          ,&nbsp;
-          %a(href="/42" title="42 dicks is the answer.")> 42 dicks
-          ,&nbsp;
-          %a(href="/100" title="You can have up to 9999 dicks. NO MORE!")> 100 dicks
-        %p
-          Supported API formats:
-        %ul
-          %li
-            JSON:&nbsp;
-            %a{:href => "/9.json"} 9 JSON dicks
-          %li
-            XML:&nbsp;&nbsp;
-            %a{:href => "/8.xml"} 8 XML dicks
-          %li
-            Plain:
-            %a{:href => "/7.txt"} 7 plain text dicks
-          %li
-            YAML:&nbsp;
-            %a{:href => "/6.yaml"} 6 YAML dicks
-        %p
-          Want more formats? Contact me:
-          %strong.email(title="Email me&hellip; *shrug* &hellip; why not? Sub out those dicks for the usual email thingies.")
-            dicks
-            %span.at(title="Put an @ here") 8=D
-            martinemde
-            %span.dot(title="Put a . here") 8=D
-            com
-        %p
-          View the
-          %em slightly more complex than should really be necessary
-          = succeed "." do
-            %a{:href => "http://github.com/martinemde/dicks", :title => "Dicks on github"} source on github
-        %p
-          Follow
-          %a{:href => "http://twitter.com/dicksapi", :title => "Dicks on Twitter"} @dicksapi
-          or the dicks presenter:
-          = succeed "." do
-            %a{:href => "http://twitter.com/martinemde", :title => "Did I really seriously call myself the dicks presenter?"} @martinemde
+#dicks
+  - @dicks.each do |dick|
+    .dick= dick
+#api
+  %ul
+    %li
+      %a(href="/9.xml" title="Render dicks in XML format (Enterprisey)") XML
+    %li
+      %a(href="/8.json" title="A much lighter weight API for your dicks") JSON
+    %li
+      %a(href="/7.yaml" title="Great for importing dicks into Ruby on Rails") YAML
+    %li
+      %a(href="/6.txt" title="Just the plain old text") Text
+  %p
+    %a(href="/business_development") Want more formats?
+- if @default
+  #info
+    %p
+      More ASCII dongs?
+      Peep at
+      = succeed "," do
+        %a(href="/10" title="10 of 'em")> 10
+      = succeed "," do
+        %a(href="/42" title="42 dicks is the answer.")> 42
+      or even
+      = succeed "." do
+        %a(href="/100" title="You can have up to 9999 dicks. NO MORE!")> 100 dicks
+    %p
+      View the
+      %em slightly more complex than should really be necessary
+      = succeed "." do
+        %a{:href => "http://github.com/martinemde/dicks", :title => "Dicks on github"} source on github
+    %p
+      Follow
+      %a{:href => "http://twitter.com/dicksapi", :title => "Dicks on Twitter"} @dicksapi
+      and me
+      = succeed "." do
+        %a{:href => "http://twitter.com/martinemde", :title => "Why did I make this again?"} @martinemde
