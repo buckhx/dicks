@@ -45,7 +45,7 @@ end
 
 get %r#/([\d]{1,4})\.xml# do |count|
   content_type :xml
-  @dicks = dicks(count).split("\n")
+  @dicks = dicks(count)
   haml :xml
 end
 
