@@ -8,7 +8,7 @@ set :root, File.dirname(__FILE__)
 
 helpers do
   def dicks(count)
-    `dicks #{count.to_i}`
+    `dicks #{count.to_i} 2>&1`
   end
 end
 
