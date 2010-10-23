@@ -7,7 +7,7 @@
         margin: 1em auto;
         width: 10em;
         font-size: x-large; }
-      #default {
+      #info {
         margin-top: 20em;
         font-size: small;
         color: #888; }
@@ -20,12 +20,24 @@
       </pre>
     </div>
     <% if @default %>
-      <p id="default">
-        Want more (or less) dicks?
-        <br />
-        Try putting a number in the url like this:
-        <a href="/10">10 dicks</a>
-      </p>
+      <div id="info">
+        <p>
+          Want more (or less) dicks?
+          <br />
+          Try putting a number in the url like this:
+          <a href="/10">10 dicks</a>
+        </p>
+        <p>
+          Dicks also supports many other formats:
+        </p>
+        <ul>
+          <li>JSON: <a href="/9.json">9 JSON dicks</a></li>
+          <li>XML: <a href="/8.xml">8 XML dicks</a></li>
+          <li>Plain: <a href="/7.txt">7 plain text dicks</a></li>
+          <li>YAML: <a href="/6.yaml">6 YAML dicks</a></li>
+        </ul>
+        <p>Need a format I don't support? Contact me at dicks -at- martinemde -/- com</p>
+      </div>
     <% end %>
   </body>
 </html>
