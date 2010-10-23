@@ -14,7 +14,7 @@ helpers do
 end
 
 get '/' do
-  @dicks = dicks(5)
+  @dicks = dicks(rand(5)+5)
   @default = true
   erb :index
 end
